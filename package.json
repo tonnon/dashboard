@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "deploy": "next build && next export && npx gh-pages -d out",
+    "deploy": "next build && npx gh-pages -d out",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
