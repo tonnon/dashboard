@@ -6,6 +6,9 @@
   --textSoft: #D5D9E0;
   --transition: all .3s ease;
   --lime: #9DDB44;
+  --bgPending: #DBBD70;
+  --bgDone: #5ADBAF;
+  --bgCancelled: #DB735A;
 }
 
 * {

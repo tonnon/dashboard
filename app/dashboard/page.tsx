@@ -45,6 +45,7 @@ let cardDetails = [
 
 
 
+
 export default function Dashboard() {
     return (
       <div className={styles.wrapper}>
@@ -61,7 +62,7 @@ export default function Dashboard() {
               />
             ))}
           </div>
-          <Transactions/>
+          <Transactions />
           <Chart/>
         </div>
         <div className={styles.side}>

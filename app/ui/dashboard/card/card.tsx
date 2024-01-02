@@ -21,7 +21,7 @@ export default function Card({
       <div   className={styles.container}>
         <div className={styles.texts}>
           <span className={styles.title}>
-            {icon} a
+            {icon}
             {title}
           </span>
           <span className={styles.number}>
