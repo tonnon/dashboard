@@ -1,4 +1,5 @@
 import styles from './transactions.module.css';
+
 import Image from 'next/image';
 
 let transactionDetails = {
@@ -6,21 +7,21 @@ let transactionDetails = {
   details: [
     {
       userName: 'Milla Venture', 
-      userImage: '@/noavatar.png',
+      userImage: '/noavatar.png',
       status: 'Done',
       date: '02/01/2024',
       amount: '$3.200'
     },
     {
       userName: 'Marvin Kolvich', 
-      userImage: '@/noavatar.png',
+      userImage: '/noavatar.png',
       status: 'Pending',
       date: '02/04/2024',
       amount: '$3.500'
     },
     {
       userName: 'Luanna Saint', 
-      userImage: '@/noavatar.png',
+      userImage: '/noavatar.png',
       status: 'Cancelled',
       date: '02/05/2024',
       amount: '$3.600'
