@@ -47,7 +47,7 @@ export default function Chart() {
           Weekly Recap
         </h2>
         <ResponsiveContainer 
-          width="100%" 
+          width="90%" 
           height="90%"
         >
           <LineChart
