@@ -1,0 +1,59 @@
+.container {
+    position: fixed;
+    width: 19%;
+}
+
+.item {
+    background: linear-gradient(to top, var(--gradientDark), var(--gradientSoft));
+    padding: 20px 24px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    position: relative;  
+}
+
+.bgContainer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 50%;
+}
+
+.img {
+    object-fit: contain;
+    opacity: 0.2;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .notification {
+    font-weight: bold;
+  }
+  
+  .subtitle {
+    color: var(--textSoft);
+    font-weight: 500;
+    font-size: 12px;
+  }
+  
+  .desc {
+    color: var(--textSoft);
+    font-size: 14px;
+  }
+  
+  .button {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: max-content;
+    background-color: var(--bgSoft);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }

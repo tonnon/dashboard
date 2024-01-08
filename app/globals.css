@@ -9,6 +9,8 @@
   --bgPending: #DBBD70;
   --bgDone: #4BB893;
   --bgCancelled: #DB735A;
+  --gradientDark: #52057B;
+  --gradientSoft: #7D5ADC;
 }
 
 * {
