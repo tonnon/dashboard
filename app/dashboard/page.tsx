@@ -42,10 +42,6 @@ let cardDetails = [
   }
 ]
 
-
-
-
-
 export default function Dashboard() {
     return (
       <div className={styles.wrapper}>

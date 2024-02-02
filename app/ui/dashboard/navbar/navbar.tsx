@@ -3,6 +3,7 @@
 import usePathName from '@/app/hooks/pathname';
 import styles from './navbar.module.css'
 import { MdNotifications, MdOutlineChat, MdPublic, MdSearch } from 'react-icons/md';
+import Search from '../searchComponent/searchComponent';
 export default function Navbar() {
   const pathName = usePathName();
     return (
@@ -12,11 +13,8 @@ export default function Navbar() {
         </div>
         <div className={styles.menu}>
           <div className={styles.search}>
-            <MdSearch />
-            <input 
-              type="text" 
-              placeholder='Search' 
-              className={styles.input}
+            <Search
+              placeholder='Search'
             />
           </div>
           <div className={styles.icons}>
