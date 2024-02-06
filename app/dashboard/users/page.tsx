@@ -44,11 +44,11 @@ export default function Users() {
                   <td>{user.isActive ? "active" : "passive"}</td> */}
                   <td>
                     <div className={styles.buttons}>
-           {/*            <Link href={`/dashboard/users/${user.id}`}> */}
+                      <Link href={`/dashboard/users/test`}> 
                         <button className={`${styles.button} ${styles.view}`}>
                           View
                         </button>
-               {/*        </Link> */}
+                     </Link> 
 {/*                       <form action={deleteUser}>
                         <input type="hidden" name="id" value={(user.id)} />
                         <button className={`${styles.button} ${styles.delete}`}>
