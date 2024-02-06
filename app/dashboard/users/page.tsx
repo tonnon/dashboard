@@ -61,7 +61,7 @@ export default function Users() {
             {/*   ))} */}
             </tbody>
           </table>
-          <Pagination /* count={count} */ /> 
+          {/* <Pagination  count={count} />  */}
         </div>
       );
   }

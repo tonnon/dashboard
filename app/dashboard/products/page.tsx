@@ -1,6 +1,7 @@
 import Search from '@/app/ui/dashboard/searchComponent/searchComponent';
 import styles from './products.module.css'
 import Pagination from "@/app/ui/dashboard/pagination/pagination";
+import Link from 'next/link';
 
 export default function Products() {
   return (
@@ -23,17 +24,17 @@ export default function Products() {
           </tr>
         </thead>
         <tbody>
-          {products.map((product) => (
+{/*           {products.map((product) => (
             <tr key={product.id}>
               <td>
                 <div className={styles.product}>
-{/*                   <Image
+                  <Image
                     src={product.img || "/noproduct.jpg"}
                     alt=""
                     width={40}
                     height={40}
                     className={styles.productImage}
-                  /> */}
+                  />
                   {product.title}
                 </div>
               </td>
@@ -57,10 +58,10 @@ export default function Products() {
                 </div>
               </td>
             </tr>
-          ))}
+          ))} */}
         </tbody>
       </table>
-      <Pagination count={count} />
+{/*       <Pagination count={count} /> */}
     </div>
   );
 }

@@ -2,6 +2,7 @@
   --bgColor: #000000;
   --bgSoft: #7D5ADC;
   --bgDark: #52057B;
+  --greyBorder: #2e374a;
   --text: white;
   --textSoft: #D5D9E0;
   --transition: all .3s ease;
@@ -16,7 +17,7 @@
 * {
   margin: 0;
   padding: 0;
-  boz-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
