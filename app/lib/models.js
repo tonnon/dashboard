@@ -1,71 +1,77 @@
 import mongoose from "mongoose";
 
-const userSchema = new mongoose.Schema ({
-    username: {
+const userSchema = new mongoose.Schema(
+    {
+      username: {
         type: String,
         required: true,
         unique: true,
         min: 3,
         max: 20,
-    },
-    email: {
+      },
+      email: {
         type: String,
         required: true,
         unique: true,
-    },
-    password: {
+      },
+      password: {
         type: String,
         required: true,
-    },
-    phone: {
+      },
+      img: {
         type: String,
-    },
-    address: {
-        type: String,
-    },
-    img: {
-        type: String,
-    },
-    isAdmin: {
+      },
+      isAdmin: {
         type: Boolean,
         default: false,
-    },
-    isActive: {
+      },
+      isActive: {
         type: Boolean,
         default: true,
+      },
+      phone: {
+        type: String,
+      },
+      address: {
+        type: String,
+      },
     },
-}, {trimestamps: true});
-
-const productSchema = new mongoose.Schema ({
-    title: {
+    { timestamps: true }
+  );
+  
+  const productSchema = new mongoose.Schema(
+    {
+      title: {
         type: String,
         required: true,
         unique: true,
-    },
-    description: {
+      },
+      desc: {
         type: String,
         required: true,
-    },
-    price: {
+      },
+      price: {
         type: Number,
         required: true,
         min: 0,
-    },
-    stock: {
+      },
+      stock: {
         type: Number,
         required: true,
         min: 0,
-    },
-    img: {
+      },
+      img: {
         type: String,
-    },
-    color: {
+      },
+      color: {
         type: String,
-    },
-    size: {
+      },
+      size: {
         type: String,
+      },
     },
-}, {trimestamps: true});
+    { timestamps: true }
+  );
 
-export const User = mongoose.models.User || mongoose.model('User', userSchema);
-export const Product = mongoose.models.Product || mongoose.model('Product', productSchema);
+export const User = mongoose.models.User || mongoose.model("User", userSchema);
+export const Product = mongoose.models.Product || mongoose.model("Product", productSchema);
