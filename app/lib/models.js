@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const userShcema = new mongoose.Schema ({
+const userSchema = new mongoose.Schema ({
     username: {
         type: String,
         required: true,
@@ -36,7 +36,7 @@ const userShcema = new mongoose.Schema ({
     },
 }, {trimestamps: true});
 
-const productShcema = new mongoose.Schema ({
+const productSchema = new mongoose.Schema ({
     title: {
         type: String,
         required: true,
@@ -67,5 +67,5 @@ const productShcema = new mongoose.Schema ({
     },
 }, {trimestamps: true});
 
-export const User = moongose.models.User || mongoose.model('User', userSchema);
-export const Product = moongose.models.Product || mongoose.model('Product', productSchema);
+export const User = mongoose.models.User || mongoose.model('User', userSchema);
+export const Product = mongoose.models.Product || mongoose.model('Product', productSchema);

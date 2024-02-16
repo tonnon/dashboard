@@ -1,9 +1,13 @@
 import Search from '@/app/ui/dashboard/searchComponent/searchComponent'
 import styles from './users.module.css'
 import Link from 'next/link'
+import { fetchUsers } from '@/app/lib/data'
 import Pagination from '@/app/ui/dashboard/pagination/pagination';
 
-export default function Users() {
+export default async function Users() {
+  const users = await fetchUsers();
+  console.log('users', users);
+
     return (
         <div className={styles.container}>
           <div className={styles.top}>
