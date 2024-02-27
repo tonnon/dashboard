@@ -10,7 +10,6 @@ interface CardProps {
   
 }
 export default function Card({
-  
   icon, 
   title, 
   number, 
