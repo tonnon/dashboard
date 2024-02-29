@@ -3,7 +3,7 @@ import styles from './users.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
 import { fetchUsers } from '@/app/lib/data'
-/* import Pagination from '@/app/ui/dashboard/pagination/pagination'; */
+import Pagination from '@/app/ui/dashboard/pagination/pagination';
 
 interface UserData {
   count: number;
@@ -13,8 +13,10 @@ interface UserData {
 
 export default async function Users({ searchParams }:UserData) {
   const q = searchParams?.q || '';
-  const userData = await fetchUsers(q);
-  const { users } = userData;
+  const page = searchParams?.page || "1";
+  const userData = await fetchUsers(q, page);
+  const { count, users } = userData;
+
     return (
         <div className={styles.container}>
           <div className={styles.top}>
@@ -72,7 +74,9 @@ export default async function Users({ searchParams }:UserData) {
                ))} 
             </tbody>
           </table>
-         {/* <Pagination   count={count} />   */}
+          <Pagination   
+            count={count} 
+          />   
         </div>
       );
   }

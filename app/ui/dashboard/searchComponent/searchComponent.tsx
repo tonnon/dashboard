@@ -7,7 +7,6 @@ import usePathName from '@/app/hooks/pathname';
 
 interface SearchProps {
   placeholder: string;
-  
 }
 
 export default function Search({ placeholder }: SearchProps) {
@@ -17,7 +16,7 @@ export default function Search({ placeholder }: SearchProps) {
 
   const handleSearch = (inputValue: any) => {
     const params = new URLSearchParams(searchParams)
-
+    params.set("page", "1");
     if (inputValue.target.value) {
       params.set('q', inputValue.target.value);
     } else {
