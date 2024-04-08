@@ -1,9 +1,10 @@
+import { addUser } from '@/app/lib/actions'
 import styles from './addUser.module.css'
 
 export default function AddUserPage() {
   return (
     <div className={styles.container}>
-        <form action="" className={styles.form}>
+        <form action={addUser} className={styles.form}>
           <input 
             type="text" 
             placeholder='username'

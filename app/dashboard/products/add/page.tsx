@@ -1,9 +1,10 @@
+import { addProduct } from '@/app/lib/actions'
 import styles from './addProduct.module.css'
 
 export default function AddProductsPage() {
   return (
     <div className={styles.container}>
-        <form action="" className={styles.form}>
+        <form action={addProduct} className={styles.form}>
           <input 
             type="text" 
             placeholder='title'

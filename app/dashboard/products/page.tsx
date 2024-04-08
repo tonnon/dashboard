@@ -2,8 +2,20 @@ import Search from '@/app/ui/dashboard/searchComponent/searchComponent';
 import styles from './products.module.css'
 import Pagination from "@/app/ui/dashboard/pagination/pagination";
 import Link from 'next/link';
+import Image from 'next/image'
+import { fetchProducts } from '@/app/lib/data'
 
-export default function Products() {
+interface ProductData {
+  count: number;
+  users: (string | boolean | number | Date)[];
+  searchParams: any;
+}
+
+export default async function Products({ searchParams }:ProductData) {
+  const q = searchParams?.q || "";
+  const page = searchParams?.page || 1;
+  const { count, products } = await fetchProducts(q, page);
+
   return (
     <div className={styles.container}>
       <div className={styles.top}>
@@ -24,7 +36,7 @@ export default function Products() {
           </tr>
         </thead>
         <tbody>
-{/*           {products.map((product) => (
+          {products.map((product) => (
             <tr key={product.id}>
               <td>
                 <div className={styles.product}>
@@ -49,19 +61,19 @@ export default function Products() {
                       View
                     </button>
                   </Link>
-                  <form action={deleteProduct}>
+{/*                   <form action={deleteProduct}>
                     <input type="hidden" name="id" value={product.id} />
                     <button className={`${styles.button} ${styles.delete}`}>
                       Delete
                     </button>
-                  </form>
+                  </form> */}
                 </div>
               </td>
             </tr>
-          ))} */}
+          ))}
         </tbody>
       </table>
-{/*       <Pagination count={count} /> */}
+      <Pagination count={count} /> 
     </div>
   );
 }
