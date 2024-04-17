@@ -6,13 +6,13 @@ import Image from 'next/image'
 import { fetchProducts } from '@/app/lib/data'
 import { deleteProduct } from '@/app/lib/actions';
 
-interface ProductData {
+interface ProductProps {
   count: number;
   users: (string | boolean | number | Date)[];
   searchParams: any;
 }
 
-export default async function Products({ searchParams }:ProductData) {
+export default async function Products({ searchParams }:ProductProps) {
   const q = searchParams?.q || "";
   const page = searchParams?.page || 1;
   const { count, products } = await fetchProducts(q, page);
