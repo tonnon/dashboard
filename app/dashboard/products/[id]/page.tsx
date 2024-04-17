@@ -1,6 +1,16 @@
 import styles from './singleProductPage.module.css'
 import Image from 'next/image'
-export default function singleProductPage() {
+import {fetchProduct} from '@/app/lib/data';
+import { updateProduct } from '@/app/lib/actions';
+
+interface singleProductPageProps {
+    params: any;
+}
+
+export default async function singleProductPage({ params }: singleProductPageProps) {
+    const {id} = params;
+    const product = await fetchProduct(id);
+ 
     return (
         <div className={styles.container}>
             <div className={styles.infoContainer}>
@@ -11,17 +21,18 @@ export default function singleProductPage() {
                         fill
                     />
                 </div>
-                Iphone
+                {product.title}
             </div>
                 <div className={styles.formContainer}>
-                    <form action="" className={styles.form}>
+                    <form action={updateProduct} className={styles.form}>
+                        <input type="hidden" name="id" value={product.id} />
                         <label>
                             Title
                         </label>
                         <input 
                             type="text" 
                             name='title'
-                            placeholder='John Doe'
+                            placeholder={product.title}
                         />
                         <label>
                             Price
@@ -29,7 +40,7 @@ export default function singleProductPage() {
                         <input 
                             type="number" 
                             name='price'
-                            placeholder='JohnDoe@gmail.com'
+                            placeholder={product.price}
                         />
                         <label>
                             Stock
@@ -37,7 +48,7 @@ export default function singleProductPage() {
                         <input 
                             type="number" 
                             name='stock'
-                            placeholder='23'
+                            placeholder={product.stock}
                         />
                         <label>
                             Color
@@ -45,7 +56,7 @@ export default function singleProductPage() {
                         <input 
                             type="text" 
                             name='color'
-                            placeholder='white'
+                            placeholder={product.color}
                         />
                         <label>
                             Size
@@ -53,7 +64,7 @@ export default function singleProductPage() {
                         <input 
                             type="text" 
                             name='size'
-                            placeholder='white'
+                            placeholder={product.color}
                         />
                         <label>
                             Category

@@ -4,6 +4,7 @@ import Pagination from "@/app/ui/dashboard/pagination/pagination";
 import Link from 'next/link';
 import Image from 'next/image'
 import { fetchProducts } from '@/app/lib/data'
+import { deleteProduct } from '@/app/lib/actions';
 
 interface ProductData {
   count: number;
@@ -61,12 +62,12 @@ export default async function Products({ searchParams }:ProductData) {
                       View
                     </button>
                   </Link>
-{/*                   <form action={deleteProduct}>
+                   <form action={deleteProduct}>
                     <input type="hidden" name="id" value={product.id} />
                     <button className={`${styles.button} ${styles.delete}`}>
                       Delete
                     </button>
-                  </form> */}
+                  </form> 
                 </div>
               </td>
             </tr>

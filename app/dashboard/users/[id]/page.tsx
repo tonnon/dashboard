@@ -1,27 +1,38 @@
+import { fetchUser } from '@/app/lib/data';
 import styles from './singleUserPage.module.css'
 import Image from 'next/image'
-export default function SingleUserPage() {
+import {updateUser} from '@/app/lib/actions';
+
+interface SingleUserPageProps {
+    params: any;
+}
+
+export default async function SingleUserPage({ params }: SingleUserPageProps) {
+    const {id} = params;
+    const user = await fetchUser(id);
+
     return (
         <div className={styles.container}>
             <div className={styles.infoContainer}>
                 <div className={styles.imgContainer}>
                     <Image 
-                        src="/noavatar.png"
+                        src={user.img || "/noavatar.png"}
                         alt="user image" 
                         fill
                     />
                 </div>
-                John Doe
+                {user.username}
             </div>
                 <div className={styles.formContainer}>
-                    <form action="" className={styles.form}>
+                    <form action={updateUser} className={styles.form}>
+                        <input type="hidden" name="id" value={user.id}/>
                         <label>
                             Username
                         </label>
                         <input 
                             type="text" 
                             name='username'
-                            placeholder='John Doe'
+                            placeholder={user.username}
                         />
                         <label>
                             Email
@@ -29,7 +40,7 @@ export default function SingleUserPage() {
                         <input 
                             type="email" 
                             name='email'
-                            placeholder='JohnDoe@gmail.com'
+                            placeholder={user.email}
                         />
                         <label>
                             Password
@@ -44,23 +55,23 @@ export default function SingleUserPage() {
                         <input 
                             type="phone" 
                             name='phone'
-                            placeholder='+112345123'
+                            placeholder={user.phone}
                         />
                         <label>
                             Address
                         </label>
                         <textarea 
                             name='address'
-                            placeholder='New York'
+                            placeholder={user.address}
                         />
                         <label>
                             Is Admin?
                         </label>
                         <select name="isAdmin" id="isAdmin">
-                            <option value={String(true)}>
+                            <option value={String(true)} selected={user.idAdmin}>
                                 Yes
                             </option>
-                            <option value={String(false)}>
+                            <option value={String(false)} selected={!user.idAdmin}>
                                 No
                             </option>
                         </select>
@@ -68,17 +79,17 @@ export default function SingleUserPage() {
                             Is Active?
                         </label>
                         <select name="isActive" id="isActive">
-                            <option value={String(true)}>
+                            <option value={String(true)} selected={user.isActive}>
                                 Yes
                             </option>
-                            <option value={String(false)}>
+                            <option value={String(false)} selected={!user.isActive}>
                                 No
                             </option>
                     </select>
                     <button type='submit'>
                         Submit
                     </button>
-                </form>
+                    </form>
             </div>
         </div>
       );

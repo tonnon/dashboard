@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { fetchUsers } from '@/app/lib/data'
 import Pagination from '@/app/ui/dashboard/pagination/pagination';
+import { deleteUser } from '@/app/lib/actions';
 
 interface UserData {
   count: number;
@@ -62,7 +63,7 @@ export default async function Users({ searchParams }:UserData) {
                           View
                         </button>
                      </Link> 
-                       <form /* action={deleteUser} */>
+                       <form  action={deleteUser} >
                         <input type="hidden" name="id" value={(user.id)} />
                         <button className={`${styles.button} ${styles.delete}`}>
                           Delete
