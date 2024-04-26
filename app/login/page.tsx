@@ -1,8 +1,10 @@
+import { authenticate } from '../lib/actions'
 import styles from './login.module.css'
+
 export default function Login() {
     return (
       <div className={styles.container}>
-        <form action="" className={styles.form}>
+        <form action={authenticate} className={styles.form}>
           <h1>
             Login
           </h1>
