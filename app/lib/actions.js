@@ -4,7 +4,7 @@ import { revalidatePath } from 'next/cache';
 import { User, Product } from './models'
 import { connectDB } from './utils'
 import { redirect } from 'next/navigation';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import { signIn } from "../auth";
 
 export const addUser = async (formData) => {

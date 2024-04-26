@@ -5,9 +5,6 @@ export default function Login() {
     return (
       <div className={styles.container}>
         <form action={authenticate} className={styles.form}>
-          <h1>
-            Login
-          </h1>
           <input 
             type="text" 
             name="username" 

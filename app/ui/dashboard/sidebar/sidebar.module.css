@@ -50,11 +50,6 @@
     transition: var(--transition)
 }
 
-.link:hover, 
-.active {
-    background-color: var(--bgDark);
-}
-
 .logout {
     padding: 15px;
     display: flex;
