@@ -14,7 +14,9 @@ export default function MenuLink ({item}: menuLinkProps) {
   return (
     <Link href={item.path} className={`${styles.container} ${pathname === item.path && styles.active}`}>
       {item.icon}
-      {item.title}
+      <p className={styles.sidebarTitle}>
+        {item.title}
+      </p>
     </Link>
   )
 }
