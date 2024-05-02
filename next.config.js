@@ -1,10 +1,8 @@
 /** @type {import('next').NextConfig} */
 
-const isProd = process.env.NODE_ENV = 'production';
-
 const nextConfig = {
     distDir: 'dist',
-    basePath: isProd ? '/dashboard' : '',
+    basePath: '/dashboard',
     images: {
         unoptimized: true,
             remotePatterns: [{
