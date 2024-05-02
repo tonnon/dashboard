@@ -10,7 +10,7 @@ interface singleProductPageProps {
 export default async function singleProductPage({ params }: singleProductPageProps) {
     const {id} = params;
     const product = await fetchProduct(id);
- 
+    
     return (
         <div className={styles.container}>
             <div className={styles.infoContainer}>
