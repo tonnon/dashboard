@@ -2,7 +2,6 @@
 const nextConfig = {
     output: 'next export',
     basePath: '/dashboard',
-    distDir: 'dist',
     images: {
         remotePatterns: [{
             protocol: 'https',
