@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: 'standalone' | 'export',
     basePath: '/dashboard',
+    distDir: 'dist',
     images: {
         remotePatterns: [{
             protocol: 'https',
