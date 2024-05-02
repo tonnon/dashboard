@@ -2,7 +2,7 @@
 
 const nextConfig = {
     distDir: 'dist',
-    basePath: '/dashboard',
+    basePath: '/dashboard/login',
     images: {
         unoptimized: true,
             remotePatterns: [{
