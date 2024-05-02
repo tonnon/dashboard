@@ -7,6 +7,23 @@ interface singleProductPageProps {
     params: any;
 }
 
+export async function generateStaticParams() {
+    // Simule a obtenção de IDs de produtos
+    const productIds = ['1', '2', '3']; // Substitua isso pela lógica real de obtenção de IDs de produtos
+
+    // Crie um array de objetos contendo o parâmetro `id` para cada produto
+    const paths = productIds.map((id) => ({
+        params: { id },
+    }));
+
+    // Retorne um objeto contendo os caminhos
+    return { paths, fallback: false };
+}
+
+interface singleProductPageProps {
+    product: any; // Defina o tipo corretamente conforme necessário
+}
+
 export default async function singleProductPage({ params }: singleProductPageProps) {
     const {id} = params;
     const product = await fetchProduct(id);
