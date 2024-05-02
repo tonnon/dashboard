@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: 'next export',
+    output: 'standalone' | 'export',
     basePath: '/dashboard',
     images: {
         remotePatterns: [{
