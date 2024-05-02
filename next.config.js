@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    output: 'next export',
+    distDir: 'dist',
     images: {
-        remotePatterns: [{
+        unoptimized: true,
+            remotePatterns: [{
             protocol: 'https',
             hostname: 'wallpapers.com',
             pathname: '/**'
