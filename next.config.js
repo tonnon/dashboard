@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    output: 'next export',
     basePath: '/dashboard',
     distDir: 'dist',
     images: {
