@@ -35,7 +35,6 @@
     ".next/types/**/*.ts",
     "app/lib/utils.js",
     "app/ui/dashboard/sidebar/sidebar.jsx",
-    "app/auth.js",
     "dist/types/**/*.ts"
   ],
   "exclude": [
