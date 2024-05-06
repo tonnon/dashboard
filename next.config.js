@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
+    basePath: '/dashboard',
+    distDir: 'dist',
     images: {
         unoptimized: true,
             remotePatterns: [{
