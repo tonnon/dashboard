@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
-    basePath: '/dashboard',
+    basePath: '/dashboard/dashboard',
     distDir: 'dist',
     images: {
         unoptimized: true,
